@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Launch Parent",
+        "type": "cppdbg",  // C++ 디버깅용
+        "request": "launch",
+        "program": "${workspaceFolder}/parent",  // 실행할 프로그램 경로
+        "args": [],  // 프로그램에 전달할 인자가 있다면 추가
+        "preLaunchTask": "build parent",  // 실행 전 빌드 작업
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": true,  // 외부 콘솔 사용
+        "MIMode": "gdb",  // 디버깅 모드 설정
+        "miDebuggerPath": "/usr/bin/gdb",  // GDB 경로
+      },
+      {
+        "name": "Launch Child",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/child",  // 실행할 자식 프로그램 경로
+        "args": [],
+        "preLaunchTask": "build child",  // 실행 전 빌드 작업
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": true,
+        "MIMode": "gdb",
+        "miDebuggerPath": "/usr/bin/gdb",  // GDB 경로
+      }
+    ]
+  }
+  

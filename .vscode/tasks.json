@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build parent", 
+        "type": "shell",  
+        "command": "gcc",
+        "args": [
+          "parent.c",  // 컴파일할 파일들
+          "semaphore.c",
+          "semaphore_ops.c",
+          "-o", "parent",  // 출력 실행 파일 이름
+          "-lrt"  // 세마포어와 공유 메모리 라이브러리 옵션
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true  // 기본 빌드 작업
+        }
+      },
+      {
+        "label": "build child",  // 작업 이름을 수정할 수 있음
+        "type": "shell",
+        "command": "gcc",
+        "args": [
+          "child.c",  // 컴파일할 파일들
+          "semaphore_ops.c",
+          "-o", "child",  // 출력 실행 파일 이름
+          "-lrt"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        }
+      }
+    ]
+  }
+  
